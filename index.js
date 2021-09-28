@@ -1,15 +1,24 @@
-// var async = require('async');
-var express = require('express');
-// var path = require('path');
-// var fs = require('fs');
-
-// var config = require('@vue/config');
-// const log = require('@redsberry/log');
-// const { mysql, redis } = require('@kidsfence/dbpool');
-// const { traceRequest, errorHandler } = require('@kidsfence/middleware');
+var express = require("express");
 
 var app = express();
 
-app.use('/', express.static('./public'));
+//test/1234
+//sample
+app.use("/test", (req, res, next) => {
+    console.log("I'm test");
+    res.send("This is test");
+    //next();
+});
 
-app.listen(13101);
+app.use("/", (req, res, next) => {
+    console.log(req.path);
+    //res.send("This is main");
+    res.json({result: 0, msg: 'SUCCESS'});
+});
+
+
+
+
+
+
+app.listen(1400);
