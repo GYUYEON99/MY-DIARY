@@ -9,6 +9,6 @@ module.exports.login = (request, response) => {
         name: "김규연",
         memberId: 173
     }
-
+// 
     response.json(result);
 }
