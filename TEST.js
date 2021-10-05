@@ -4,7 +4,7 @@ var app = express();
 
 app.use("/test", (req, res, next) => {
     console.log("I'm test");
-    res.send("This is test");
+    res.send("This is a  test1");
 
 });
 
