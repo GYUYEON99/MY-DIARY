@@ -1,24 +1,19 @@
 var express = require("express");
 
+var controller = require("mdController");
+
 var app = express();
 
-//test/1234
-//sample
-app.use("/test", (req, res, next) => {
-    console.log("I'm test");
-    res.send("This is test");
-    //next();
+app.use((request, response, next) => {
+    console.log();
+
+    next();
 });
 
-app.use("/", (req, res, next) => {
-    console.log(req.path);
-    //res.send("This is main");
-    res.json({result: 0, msg: 'SUCCESS'});
+app.post("/login", controller.login);
+
+app.use((request, response) => {
+    response.status(404).send("Not Found");
 });
-
-
-
-
-
 
 app.listen(1400);
