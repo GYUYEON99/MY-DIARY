@@ -1,12 +1,13 @@
 var express = require("express");
 
-var controller = require("mdController");
+var controller = require("./mdController");
 
 var app = express();
 
-app.use((request, response, next) => {
-    console.log();
+app.get('/favicon.ico', (req, res) => res.status(204));
 
+app.use((request, response, next) => {
+    console.log(request.path);
     next();
 });
 
